@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Game</title>
+</head>
+<body>
+          <div>
+            <form action="/games/" method="post">
+                
+              <fieldset>
+                <legend>New Game Entry</legend>
+                <label>
+                  Game Name:<input
+                    type="text"
+                    name="gameName"
+                    value="<%= animal.species %>"
+                    placeholder="enter game name"
+                  />
+                </label>
+                <label>
+                    Finished:<input type="checkbox" name="finished"/>
+                  </label>
+                <label>
+                    Rating:<input
+                      type="number"
+                      name="Rating"
+                      value="<%= animal.lifeExpectancy %>"
+                      placeholder="score out of 5, 0 for N/A"
+                    />
+                  </label>
+              </fieldset>
+              <input type="submit" value="create new animal" />
+            </form>
+          </div>
+        </main>
+</body>
+</html>

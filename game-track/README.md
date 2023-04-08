@@ -14,7 +14,7 @@ My project is going to be a video game tracker/logger called **Game Track**. I w
 - EJS
 
 ### **Wireframe**
-<img src = 
+<img src = https://docs.google.com/drawings/d/1MZtHCJJd5ck0GmFryfDb7R8m2Aa9ukLRKhw9FZPa6hU/edit?usp=sharing>
 
 #### MVP Goals
 * As a user, I want to have a home page with a "make new entry" button.
