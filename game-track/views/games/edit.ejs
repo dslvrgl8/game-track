@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Game</title>
 </head>
 <body>
-    
+          <div>
+            <form action="/games/" method="post">
+                
+              <fieldset>
+                <legend>New Game Entry</legend>
+                <label>
+                  Game Name:<input
+                    type="text"
+                    name="gameName"
+                    value=""
+                    placeholder="enter game name"
+                  />
+                </label>
+                <label>
+                    Completed:<input type="checkbox" name="finished"/>
+                  </label>
+                <label>
+                    Finished:<input type="checkbox" name="finished"/>
+                  </label>
+                <label>
+                    Rating:<input
+                      type="number"
+                      name="Rating"
+                      value=""
+                      placeholder="score out of 5, 0 for N/A"
+                    />
+                  </label>
+              </fieldset>
+              <input type="submit" value="edit entry" />
+            </form>
+          </div>
+        </main>
 </body>
 </html>

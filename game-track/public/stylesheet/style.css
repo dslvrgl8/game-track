@@ -1,0 +1,27 @@
+/* Fonts */
+@font-face {
+    font-family: 'indexFont';
+    src: url("../fonts/batmfa.ttf") format('truetype');
+}
+
+/* new.ejs */
+.newEntry {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    background-image: url(../images/new\ background.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* index.ejs */
+.indexHead {
+    font-family: 'indexFont';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

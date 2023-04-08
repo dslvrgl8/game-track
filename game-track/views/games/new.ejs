@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Game</title>
+    <link rel = "stylesheet" href = "/stylesheet/style.css"
+    <title></title>
 </head>
-<body>
+<body class = "newEntry">
           <div>
             <form action="/games/" method="post">
                 
@@ -16,23 +17,29 @@
                   Game Name:<input
                     type="text"
                     name="gameName"
-                    value="<%= animal.species %>"
+                    value=""
                     placeholder="enter game name"
                   />
                 </label>
+                </br>
+                <label>
+                    Completed:<input type="checkbox" name="finished"/>
+                  </label>
+                </br>
                 <label>
                     Finished:<input type="checkbox" name="finished"/>
                   </label>
+                </br>
                 <label>
                     Rating:<input
                       type="number"
                       name="Rating"
-                      value="<%= animal.lifeExpectancy %>"
-                      placeholder="score out of 5, 0 for N/A"
+                      value=""
+                      placeholder="out of 5, 0 = N/A"
                     />
                   </label>
               </fieldset>
-              <input type="submit" value="create new animal" />
+              <input type="submit" value="Create New Entry" />
             </form>
           </div>
         </main>
