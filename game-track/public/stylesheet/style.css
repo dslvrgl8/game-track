@@ -4,6 +4,11 @@
     src: url("../fonts/batmfa.ttf") format('truetype');
 }
 
+@font-face {
+    font-family: 'editFont';
+    src: url("../fonts/ARCADE_N.TTF") format('truetype');
+}
+
 /* new.ejs */
 .newEntry {
     background-color: black;
@@ -13,15 +18,60 @@
     justify-content: center;
     font-size: x-large;
     background-image: url(../images/new\ background.gif);
-    background-position: center;
+    background-position: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 75px;
 }
 
 /* index.ejs */
 .indexHead {
     font-family: 'indexFont';
     display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    margin-top: 75px;
+}
+
+.indexBody {
+    background-image: url(../images/index_background.webp);
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+    .played {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .unplayed {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .searchGames {
+        display: flex;
+        align-items: top;
+        justify-content: top;
+    }
+
+/* edit.ejs */
+.editPage {
+    background-image: url(../images/edit_background.gif);
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
     align-items: center;
     justify-content: center;
+    font-size: x-large;
+    margin-top: 75px;
+}
+
+.editHeader {
+    font-family: 'editFont';
 }

@@ -31,6 +31,11 @@ app.post('/games/search', (req, res) => {
 app.get('/games/new', (req, res) => {
     res.render('games/new.ejs')
 });
+
+app.get('/games/edit', (req, res) => {
+    res.render('games/edit.ejs')
+    res.redirect('/games/')
+});
 // const gamesController = require('./controllers/games');
 // app.use('/games', gamesController);
 
