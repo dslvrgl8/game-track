@@ -19,18 +19,15 @@
     <div id = 'resultsContainer'>
         
     </div>
-    <div class = "played">Played Games
-        <ul>
-            <li>Game</li>
-            <li>Game</li>
-        </ul>
-    </div>
-    <div class = "unplayed">Want to play
-            <ul>
-                <li>Game2</li>
-                <li>Game2</li>
-            </ul>
-
-    </div>
+        <a href="../games/played"><button class = 'button'>Played</button></a>
+    
+        <a href = "../games/unplayed"><button class = 'button'>Want To Play</button></a>
+    <script> 
+        // const searchTerm = req.body.searchBar
+        // fetch(`https://api.rawg.io/api/games/?key=${process.env.API_KEY}&search=${searchTerm}`)
+        // .then((apiResponse) => apiResponse.json())
+        // .then(result => res.render('games/index.ejs', {result}))
+        // console.log(searchTerm)
+     </script>
 </body>
 </html>

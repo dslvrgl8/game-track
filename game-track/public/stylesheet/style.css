@@ -34,24 +34,28 @@
 }
 
 .indexBody {
-    background-image: url(../images/index_background.webp);
+    background-image: url(../images/city_background.gif);
     background-position: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
     color: white;
+    align-items: center;
 }
-
-    .played {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
+    .button {
+        background-color: #394d6d;
+        color: #ffcdb2;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px;
+        height: 115px;
+        width: 275px;
+        margin: 5px;
+        padding: 30px;
+        border-color: black;
+        font-size: xx-large;
     }
 
-    .unplayed {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
     .searchGames {
         display: flex;
         align-items: top;

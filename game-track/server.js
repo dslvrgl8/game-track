@@ -22,11 +22,23 @@ app.get('/games', (req, res) => {
 app.post('/games/search', (req, res) => {
     // res.render('games/index.ejs')
     const searchTerm = req.body.searchBar
-       fetch(`https://api.rawg.io/api/games/?key=${process.env.API_KEY}&search=${searchTerm}`)
-       .then((apiResponse) => apiResponse.json())
+    console.log(`https://api.rawg.io/api/games/?key=${process.env.API_KEY}&search=${encodeURIComponent(searchTerm)}`)
+       fetch(`https://api.rawg.io/api/games/?key=65295476a4e840ff9fa04447f3cd7fd8&search=${encodeURIComponent(searchTerm)}`)
+       .then((apiResponse) => {
+        // apiResponse.json()
+        console.log(apiResponse)
+    })
        .then(result => res.render('games/index.ejs', {result}))
     console.log(searchTerm)
     })
+
+app.get('/games/played', (req, res) => {
+    res.render('games/played.ejs')
+});  
+
+app.get('/games/unplayed', (req, res) => {
+    res.render('games/unplayed.ejs')
+});   
 
 app.get('/games/new', (req, res) => {
     res.render('games/new.ejs')
