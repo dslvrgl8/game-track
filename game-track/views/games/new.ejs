@@ -41,8 +41,69 @@
                   </label>
               </fieldset>
               <input type="submit" value="Create New Entry" />
+
+
+              <label for="searchbar">SEARCH FOR Game</label>
+        <input name="searchbar" id="searchbar" placeholder="halo" />
+      
+        <button onclick="submitSearch(event)" type="button">SEARCH</button>
             </form>
+            <ul id="searchResultsList">
+              empty
+            </ul>
           </div>
         </main>
+
+
+
+        <script>
+          const searchBar = document.getElementById('searchbar'); //<---grabbing the searchbar and assigning it to an acceiible variable
+          let searchTerm = "";
+          let searchResults = [];
+        
+          function submitSearch(event) {
+            event.preventDefault();
+            console.log("SUBMIT IS LINkED UP")
+
+             //---grabbing user input
+            console.log(searchBar.value)
+            searchTerm = searchBar.value; // <---user's search term to create an api call with
+
+             //---making api call
+            const searchUrl = `https://api.rawg.io/api/games?key=65295476a4e840ff9fa04447f3cd7fd8&search=${searchTerm}`
+            console.log(searchUrl);
+            fetch(searchUrl)
+            .then(results => {
+              console.log(results)
+              results.json()
+              .then(gameData => {
+              console.log(gameData)
+              searchResults = gameData.results
+              listResults();
+            });
+          })
+          };//end of submitSearch
+
+          function listResults() {
+            console.log("Now it's time to list the results")
+            console.log(searchResults)
+
+            const listContainer = document.getElementById('searchResultsList'); // <--- grabbing the <ul> container
+
+            searchResults.forEach(game => {
+              const gameItem = document.createElement('li');
+              gameItem.innerHTML = `<h3>${game.name}</h3>
+                                    <img class= 'gameResultsImage' src= "${game.background_image}"/>
+                                    
+              `;
+              listContainer.append(gameItem)
+
+            });// <--end of foreach
+
+          }
+
+        
+        </script>
+
 </body>
 </html>
