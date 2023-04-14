@@ -31,6 +31,7 @@
     align-items:flex-start;
     justify-content: center;
     margin-top: 75px;
+    font-size: 90px;
 }
 
 .indexBody {
@@ -60,6 +61,7 @@
         display: flex;
         align-items: top;
         justify-content: top;
+        margin-top: -40px;
     }
 
 /* edit.ejs */
