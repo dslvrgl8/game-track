@@ -9,6 +9,11 @@
     src: url("../fonts/ARCADE_N.TTF") format('truetype');
 }
 
+@font-face {
+    font-family: 'playedFont';
+    src: url('../fonts/roguehero.ttf') format('truetype');
+}
+
 /* new.ejs */
 .newEntry {
     background-color: black;
@@ -80,4 +85,38 @@
 
 .editHeader {
     font-family: 'editFont';
+}
+
+/* Played.ejs */
+
+.playedBody {
+    background-image: url(../images/background_link.jpeg);
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.playedHeader {
+    font-family: 'playedFont';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 90px;
+}
+
+.buttonPlayed {
+    background-color: #394d6d;
+    color: #ffcdb2;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px;
+    height: 115px;
+    width: 275px;
+    margin: 5px;
+    padding: 30px;
+    border-color: black;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
