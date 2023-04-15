@@ -13,47 +13,26 @@
             <form action="/games/" method="post">
                 
               <fieldset>
-                <legend>New Game Entry</legend>
-                <label>
-                  Game Name:<input
-                    type="text"
-                    name="gameName"
-                    value=""
-                    placeholder="enter game name"
-                  />
-                </label>
-                </br>
-                <label>
-                    Completed:<input type="checkbox" name="finished"/>
-                  </label>
-                </br>
-                <label>
-                    Finished:<input type="checkbox" name="finished"/>
-                  </label>
-                </br>
-                <label>
-                    Rating:<input
-                      type="number"
-                      name="Rating"
-                      value=""
-                      placeholder="out of 5, 0 = N/A"
-                    />
-                  </label>
+                <legend class = 'newHeader'>New Game Entry</legend>
+                <label for="title">Title</label>
+                <input id="title" type="text" name="title" placeholder="game name"/>
+                <div id="gameImage">[Game image here]</div>
               </fieldset>
-              <input type="submit" value="Create New Entry" />
+              <!-- <input type="submit" value="Create New Entry" /> -->
 
 
-              <label for="searchbar">SEARCH FOR Game</label>
-        <input name="searchbar" id="searchbar" placeholder="halo" />
+              <label for="searchbar">Search For Game</label>
+        <input name="searchbar" id="searchbar" placeholder="type here" />
       
-        <button onclick="submitSearch(event)" type="button">SEARCH</button>
+        <button onclick="submitSearch(event)" type="button">Search</button>
             </form>
             <ul id="searchResultsList">
-              empty
+              
             </ul>
+            <a href = "../games/"><button class = 'buttonBack'>Back</button></a>
           </div>
         </main>
-
+        
 
 
         <script>
@@ -92,6 +71,14 @@
 
             searchResults.forEach(game => {
               const gameItem = document.createElement('li');
+              gameItem.setAttribute("class", "resultItem");
+              gameItem.onclick = function(event){
+                console.log('onclick activated')
+                console.log(event.currentTarget)
+                console.log(event.currentTarget.firstChild)
+                const title = event.currentTarget.firstChild.innerText
+                console.log(title)
+              }; // end of onclick
               gameItem.innerHTML = `<h3>${game.name}</h3>
                                     <img class= 'gameResultsImage' src= "${game.background_image}"/>
                                     
@@ -102,8 +89,9 @@
 
           }
 
-        
+         
         </script>
 
 </body>
+
 </html>

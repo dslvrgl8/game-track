@@ -14,7 +14,21 @@
     src: url('../fonts/roguehero.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'unplayedFont';
+    src: url('../fonts/Adonais.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'newFont';
+    src: url('../fonts/terminator\ real\ nfi.ttf') format('truetype');
+}
+
 /* new.ejs */
+.newHeader {
+    font-family: 'newFont';
+}
+
 .newEntry {
     background-color: black;
     color: white;
@@ -27,6 +41,16 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 75px;
+}
+
+.gameResultsImage {
+    height: 400px;
+    width: 600px;
+}
+
+.resultItem {
+    border: solid 2px;
+    padding: 10px;
 }
 
 /* index.ejs */
@@ -88,14 +112,6 @@
 }
 
 /* Played.ejs */
-
-.playedBody {
-    background-image: url(../images/background_link.jpeg);
-    background-position: cover;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .playedHeader {
     font-family: 'playedFont';
     display: flex;
@@ -103,20 +119,38 @@
     justify-content: center;
     color: white;
     font-size: 90px;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
 }
 
-.buttonPlayed {
-    background-color: #394d6d;
-    color: #ffcdb2;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px;
-    height: 115px;
-    width: 275px;
-    margin: 5px;
-    padding: 30px;
-    border-color: black;
-    font-size: xx-large;
+.playedBody {
+    background-image: url(../images/background_link.jpeg);
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* unplayed.ejs */
+.unplayedHeader {
+    font-family: 'unplayedFont';
+    display: flex;
+    align-items: center;
     justify-content: center;
+    color: white;
+    font-size: 90px;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.unplayedBody {
+    background-image: url(../images/hades_background.jpeg);
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
