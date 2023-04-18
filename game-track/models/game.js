@@ -1,10 +1,10 @@
-const { mongoose } = require('../db/connection');
+const mongoose = require('mongoose')
 
 const gamesSchema = new mongoose.Schema({
-    gameName: String,
-    Completed: Boolean,
-    Finished: Boolean,
-    Rating: Number
+    title: String,
+    rating: String
 })
 
-const game = mongoose.model('Game', gamesSchema)
+const Game = mongoose.model('Game', gamesSchema, "games")
+
+module.exports = {Game}

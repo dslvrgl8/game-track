@@ -53,6 +53,15 @@
     padding: 10px;
 }
 
+#gameImage {
+    /* border: solid 2px black; */
+    height: 293px;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: cover;
+}
+
 /* index.ejs */
 .indexHead {
     font-family: 'indexFont';

@@ -11,110 +11,21 @@
 <body class = "newEntry">
   <div id = 'searchBarResults'>
           <div>
-            <form action="/games/" method="post">
-                
+            <form action="/games" method="POST">
               <fieldset>
                 <legend class = 'newHeader'>New Game Entry</legend>
-                <label for="title">Title</label>
-                <input id="title" type="text" name="title" placeholder="game name"/>
-                <div id="gameImage">[Game image here]</div>
-                <label>
-                  Played?: <input type="checkbox" name="played" value="played">
-                </label>
-              </br>
-                <input type="submit" value="Create New Entry" />
+                <label for="title">Title: </label>
+                <input id="title" type="text" name="title" value="TITLE HERE" required />
+                <label for="rating">Rating: </label>
+                <input id="rating" type="text" name="rating" value="rating HERE" required />
               </fieldset>
+              <input type="submit" value="Create New Entry" />
               <!-- <input type="submit" value="Create New Entry" /> -->
 
-
-              <label for="searchbar">Search For Game</label>
-        <input name="searchbar" id="searchbar" placeholder="type here" />
-      
-        <button onclick="submitSearch(event)" type="button">Search</button>
-        
             </form>
-            <ul id="searchResultsList">
-              
-            </ul>
-            <a href = "../games/"><button class = 'buttonBack'>Back</button></a>
           </div>
         </main>
-        
-
-
-        <script>
-          const searchBar = document.getElementById('searchbar'); //<---grabbing the searchbar and assigning it to an acceiible variable
-          let searchTerm = "";
-          let searchResults = [];
-        
-          function submitSearch(event) {
-            event.preventDefault();
-            console.log("SUBMIT IS LINkED UP")
-
-             //---grabbing user input
-            console.log(searchBar.value)
-            searchTerm = searchBar.value; // <---user's search term to create an api call with
-
-             //---making api call
-            const searchUrl = `https://api.rawg.io/api/games?key=65295476a4e840ff9fa04447f3cd7fd8&search=${searchTerm}`
-            console.log(searchUrl);
-            fetch(searchUrl)
-            .then(results => {
-              console.log(results)
-              results.json()
-              .then(gameData => {
-              console.log(gameData)
-              searchResults = gameData.results
-              listResults();
-            });
-          })
-          };//end of submitSearch
-
-          function listResults() {
-            console.log("Now it's time to list the results")
-            console.log(searchResults)
-
-            const searchBarResults = document.getElementById('searchBarResults');
-
-            const listContainer = document.getElementById('searchResultsList'); // <--- grabbing the <ul> container
-
-            searchResults.forEach(game => {
-              const gameItem = document.createElement('li');
-              const imgContainer = document.getElementById("gameImage")
-              gameItem.setAttribute("class", "resultItem");
-              gameItem.onclick = function(event){
-                console.log('onclick activated')
-                console.log(event.currentTarget)
-                console.log(event.currentTarget.firstChild)
-                const title = event.currentTarget.firstChild.innerText
-                console.log(title)
-                imgContainer.style.backgroundImage = `url("${event.currentTarget.firstChild.innerText}")`
-                searchBar.value = title;
-              }; // end of onclick
-              gameItem.innerHTML = `<h3>${game.name}</h3>
-                                    <img class= 'gameResultsImage' src= "${game.background_image}"/>
-                                    
-              `;
-              listContainer.append(gameItem)
-
-            });// <--end of foreach
-
-          
-
-          }
-          const form = document.querySelector('form');
-            form.addEventListener('submit', (event) => {
-              event.preventDefault();
-              const playedCheckbox = document.querySelector('input[name="played"]');
-              const playedValue = playedCheckbox.checked ? 'played' : 'unplayed';
-              console.log(playedValue)
-              // const url = `/games/${playedValue}`; // modify the URL based on the checkbox value
-              // form.redirect = url; // update the form action to redirect to the correct page
-              // form.submit(); // submit the form
-            });
-
-         
-        </script>
+      
 
 </body>
 
