@@ -28,7 +28,7 @@ app.post('/games/search', (req, res) => {
         // apiResponse.json()
         console.log(apiResponse)
     })
-       .then(result => res.render('games/index.ejs', {result}))
+       .then(result => res.render('games/played.ejs', {result}))
     console.log(searchTerm)
     })
 

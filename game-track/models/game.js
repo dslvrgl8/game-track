@@ -7,4 +7,4 @@ const gamesSchema = new mongoose.Schema({
     Rating: Number
 })
 
-const fame = mongoose.model('Game', gamesSchema)
+const game = mongoose.model('Game', gamesSchema)
