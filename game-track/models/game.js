@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 
 const gamesSchema = new mongoose.Schema({
     title: String,
-    rating: String
+    rating: String,
+    played: String
 })
 
 const Game = mongoose.model('Game', gamesSchema, "games")

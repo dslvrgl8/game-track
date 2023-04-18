@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
+const startGames = require('../db/gamesSeedData')
 const {Game} = require('../models/game')
 
 
@@ -12,11 +13,23 @@ const {Game} = require('../models/game')
 //==============ROUTES============================
 
 
-
-router.get('/', (req, res) => {
-    res.render('games/index.ejs')
+// Index
+router.get('/', async (req, res) => {
+    const games = await Game.find({})
+    res.render('games/index.ejs', {games})
 })
 
+//Seed
+router.get('/seed', async (req, res) => {
+	await Game.deleteMany({});
+	await Game.create(startGames);
+	res.redirect('/games');
+});
+
+// show
+router.get('/show', async (req, res) =>{
+    res.render('games/show.ejs')
+})
 // app.post('/games/search', (req, res) => {
 //     // res.render('games/index.ejs')
 //     const searchTerm = req.body.searchBar

@@ -12,24 +12,11 @@
     <header>
         <h1 class = "indexHead">👾Game Track👾</h1>
     </header>
-    <!-- <form action = '/games/search' method = 'POST' class = 'searchGames'>
-        <input type = 'search' name = 'searchBar' id = 'searchBar' placeholder = 'search games'/>
-        <button type = 'submit' id = "searchButton">Search</button>
-    </form> -->
-    <div id = 'resultsContainer'>
-        
-    </div>
-        <a href="../games/played"><button class = 'button'>Played</button></a>
-    
-        <a href = "../games/unplayed"><button class = 'button'>Want To Play</button></a>
-
-        <a href = "../games/new"><button class = 'button'>New Entry</button></a>
-    <script> 
-        // const searchTerm = req.body.searchBar
-        // fetch(`https://api.rawg.io/api/games/?key=${process.env.API_KEY}&search=${searchTerm}`)
-        // .then((apiResponse) => apiResponse.json())
-        // .then(result => res.render('games/index.ejs', {result}))
-        // console.log(searchTerm)
-     </script>
+    <% games.forEach(function(game) { %>
+        <div>
+          <img src="<%= game.image_url %>" alt="<%= game.title %>" />
+        </div>
+      <% }); %>
+      <a href = "../games/new"><button class = 'newButton'>New Entry</button></a>
 </body>
 </html>

@@ -17,7 +17,7 @@
                 <legend class = 'newHeader'>New Game Entry</legend>
                 <label for="title">Title: </label>
                 <input id="title" type="text" name="title" placeholder="TITLE HERE" required />
-                <input readonly hidden/>
+                <!-- <input name="imgUrl" id="imageUrl"/> -->
                 <label for="rating">Rating: </label>
                 <input id="rating" type="text" name="rating" placeholder="rating HERE" required />
                 <label for="searchbar">Search For Game</label>
@@ -86,6 +86,7 @@
             searchResults.forEach(game => {
               const gameItem = document.createElement('li');
               const imgContainer = document.getElementById("gameImage")
+              const imageUrl = document.getElementById('imgUrl')
               // formContainer.value = event.currentTarget.firstChild.innerText;
               // console.log(event.currentTarget.firstChild.innerText)
               gameItem.setAttribute("class", "resultItem");
@@ -99,7 +100,9 @@
                 console.log(event.currentTarget.children[1].src);
 
                 imgContainer.style.backgroundImage = `url("${event.currentTarget.children[1].src}")`
+                // imgUrl.value = event.currentTarget.children[1].src
                 listContainer.innerHTML = ""
+
                 titleInput.value = title;
               }; // end of onclick
               gameItem.innerHTML = `<h3>${game.name}</h3>
@@ -113,16 +116,16 @@
           
 
           }
-          const form = document.querySelector('form');
-            form.addEventListener('submit', (event) => {
-              event.preventDefault();
-              const playedCheckbox = document.querySelector('input[name="played"]');
-              const playedValue = playedCheckbox.checked ? 'played' : 'unplayed';
-              console.log(playedValue)
-              const url = `/games/${playedValue}`; // modify the URL based on the checkbox value
-              form.redirect = url; // update the form action to redirect to the correct page
-              form.submit(); // submit the form
-            });
+          // const form = document.querySelector('form');
+          //   form.addEventListener('submit', (event) => {
+          //     event.preventDefault();
+          //     const playedCheckbox = document.querySelector('input[name="played"]');
+          //     const playedValue = playedCheckbox.checked ? 'played' : 'unplayed';
+          //     console.log(playedValue)
+          //     // const url = `/games/${playedValue}`; // modify the URL based on the checkbox value
+          //     // form.redirect = url; // update the form action to redirect to the correct page
+          //     // form.submit(); // submit the form
+          //   });
 
          
         </script>

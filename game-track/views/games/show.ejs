@@ -6,10 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "/stylesheet/style.css">
     <link rel="stylesheet" href="/stylesheet/normalize.css"> 
-    
-    <title><%= game.name %></title>
+
+    <title>Game Entry</title>
 </head>
 <body>
-    
+     <fieldset>
+                <legend class = 'newHeader'>New Game Entry</legend>
+                <label for="title">Title: </label>
+                <input id="title" type="text" name="title" placeholder="TITLE HERE" required />
+                <!-- <input name="imgUrl" id="imageUrl"/> -->
+                <label for="rating">Rating: </label>
+                <input id="rating" type="text" name="rating" placeholder="rating HERE" required />
+                <!-- <label for="searchbar">Search For Game</label>
+                <input name="searchbar" id="searchbar" placeholder="type here" />
+                <button onclick="submitSearch(event)" type="button">Search</button> -->
+
+                <div id="gameImage"></div>
+                <label>
+                  Played?: <input type="checkbox" name="played" value="played">
+                </label>
+              </br>
+              <a href = "../games/edit"><button class = 'editButton'>Edit Entry</button></a>
+              </fieldset>
 </body>
 </html>
