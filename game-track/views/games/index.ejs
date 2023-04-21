@@ -8,18 +8,20 @@
     <link rel="stylesheet" href="/stylesheet/normalize.css"> 
     <title></title>
 </head>
-<body class = "indexBody">
+<body class="indexBody">
     <header>
-        <h1 class = "indexHead">👾Game Track👾</h1>
+        <h1 class="indexHead">👾Game Track👾</h1>
     </header>
+    <div class="gameBox">
     <% games.forEach(function(game) { %>
         <div class="gameDisplay">
-            <a href="/games/<%= game._id%>"/>
+            <a href="/games/<%= game._id%>" style="text-decoration: none;"/>
             <h2>
-                <%= game.imageUrl %> - <%= game.title%>
+                <%= game.title%> - <%= game.played %>
             </h2>
         </div>
       <% }); %>
+    </div>
       <a href = "../games/new"><button class = 'newButton'>New Entry</button></a>
 </body>
 </html>

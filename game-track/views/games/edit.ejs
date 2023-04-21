@@ -23,7 +23,9 @@
                   <input name="searchbar" id="searchbar" placeholder="type here" />
                   <button onclick="submitSearch(event)" type="button">Search</button> -->
   
-                  <div id="gameImage"></div>
+                  <div id="gameImage">
+                    <img src="<%= game.image %>" class="gameImage"/>
+                  </div>
                   <label>
                     Played?: <input type="checkbox" name="played" value="<%= game.played %>"/>
                   </label>
@@ -34,8 +36,8 @@
                 </br>
               </fieldset>
             </br>
-            <a href = "../games/"><button class = 'buttonBack'>Back</button></a>
-              <input type="submit" value="Submit Edit"/>
+            <a href = "../games/"><button class = 'backButton'>Back</button></a>
+              <input type="submit" value="Submit Edit" class="submitEdit"/>
             </form>
           </div>
 </body>

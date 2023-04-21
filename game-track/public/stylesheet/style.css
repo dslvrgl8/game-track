@@ -26,7 +26,7 @@
 
 @font-face {
     font-family: 'indexGameDisplay';
-    src: url("../fonts/Kaoly\ Demo-Regular.ttf") format('truetype');
+    src: url("../fonts/Thunder\ Kingdom.ttf") format('truetype');
 }
 
 /* new.ejs */
@@ -67,6 +67,15 @@
     background-position: cover;
 }
 
+.submitButton {
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px;
+    height: 42px;
+    width: 204px;
+    margin: 5px;
+    padding: 7px;
+}
+
 /* index.ejs */
 .indexHead {
     font-family: 'indexFont';
@@ -86,11 +95,23 @@
     flex-direction: column;
     color: white;
     align-items: center;
+    
 }
 
 .gameDisplay {
     font-family: 'indexGameDisplay';
+    color: #ffcdb2;
 }
+
+.gameBox {
+    border: 1px;
+    display: flex-box;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+    color: #ffcdb2;
+}
+
     .newButton {
         background-color: #394d6d;
         color: #ffcdb2;
@@ -109,18 +130,54 @@
         align-items: top;
         justify-content: top;
         margin-top: -40px;
-    } */
+    } 
 
 /* Show Body */
 .showBody{
-    background-image: url(../images/background_link.jpeg);
+    background-image: url(../images/niceZeldaFinal.jpeg);
     background-position: cover;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    color: white;
+}
 
+.gameImage {
+    max-width: 60%;  
+    height: auto;  
+}
+
+    .editButton {
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px;
+        height: 33px;
+        width: 121px;
+        margin: 5px;
+        padding: 7px;
+    }
+
+    .deleteButton {
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px;
+        height: 33px;
+        width: 121px;
+        margin: 5px;
+        padding: 7px;
+    }
+
+    .backButton {
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px;
+        height: 33px;
+        width: 121px;
+        margin: 5px;
+        padding: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;    }
 /* edit.ejs */
 .editPage {
     background-image: url(../images/edit_background.gif);
@@ -137,5 +194,14 @@
 
 .editHeader {
     font-family: 'editFont';
+}
+
+.submitEdit {
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px;
+    height: 40px;
+    width: 136px;
+    margin: 5px;
+    padding: 7px;
 }
 
