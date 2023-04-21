@@ -13,8 +13,11 @@
         <h1 class = "indexHead">👾Game Track👾</h1>
     </header>
     <% games.forEach(function(game) { %>
-        <div>
-          <img src="<%= game.image_url %>" alt="<%= game.title %>" />
+        <div class="gameDisplay">
+            <a href="/games/<%= game._id%>"/>
+            <h2>
+                <%= game.imageUrl %> - <%= game.title%>
+            </h2>
         </div>
       <% }); %>
       <a href = "../games/new"><button class = 'newButton'>New Entry</button></a>

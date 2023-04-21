@@ -7,43 +7,36 @@
     <link rel = "stylesheet" href = "/stylesheet/style.css">
     <link rel="stylesheet" href="/stylesheet/normalize.css"> 
 </head>
-<body class = editPage>
+<body class = 'editPage'>
           <div>
-            <form action="/games/?_method=PUT" method="post">
+            <form action="/games/<%= game.id %>?_method=PUT" method="POST">
                 
               <fieldset>
                 <legend class = "editHeader">Edit Game Entry</legend>
-                <label>
-                  Game Name:<input
-                    type="text"
-                    name="gameName"
-                    value=""
-                    placeholder="enter game name"
-                  />
-                </label>
-              </br>
-                <label>
-                    Completed:<input type="checkbox" name="finished"/>
+                <fieldset>
+                  <label for="title">Title: </label>
+                  <input id="title" type="text" name="title" placeholder="Title Here" value="<%= game.title %>"required />
+                  <!-- <input name="imgUrl" id="imageUrl"/> -->
+                  <label for="rating">Rating: </label>
+                  <input id="rating" type="text" name="rating" placeholder="Rating out of 10" value="<%= game.rating %>"required />
+                  <!-- <label for="searchbar">Search For Game</label>
+                  <input name="searchbar" id="searchbar" placeholder="type here" />
+                  <button onclick="submitSearch(event)" type="button">Search</button> -->
+  
+                  <div id="gameImage"></div>
+                  <label>
+                    Played?: <input type="checkbox" name="played" value="<%= game.played %>"/>
                   </label>
                 </br>
-                <label>
-                    Finished:<input type="checkbox" name="finished"/>
-                  </label>
-                </br>
-                <label>
-                    Rating:<input
-                      type="number"
-                      name="Rating"
-                      value=""
-                      placeholder="out of 5, 0 is N/A"
-                    />
-                  </label>
+                  
+                </fieldset>
+                <!-- <input type="submit" value="Create New Entry" /> -->
                 </br>
               </fieldset>
             </br>
-              <input type="submit" value="Edit Entry" a href = "../games/show"/>
+            <a href = "../games/"><button class = 'buttonBack'>Back</button></a>
+              <input type="submit" value="Submit Edit"/>
             </form>
           </div>
-        </main>
 </body>
 </html>

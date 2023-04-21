@@ -24,6 +24,11 @@
     src: url('../fonts/terminator\ real\ nfi.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'indexGameDisplay';
+    src: url("../fonts/Kaoly\ Demo-Regular.ttf") format('truetype');
+}
+
 /* new.ejs */
 .newHeader {
     font-family: 'newFont';
@@ -82,25 +87,39 @@
     color: white;
     align-items: center;
 }
-    .button {
+
+.gameDisplay {
+    font-family: 'indexGameDisplay';
+}
+    .newButton {
         background-color: #394d6d;
         color: #ffcdb2;
         border-radius: 5px;
         box-shadow: 5px 5px 5px;
-        height: 115px;
-        width: 275px;
+        height: 95px;
+        width: 255px;
         margin: 5px;
         padding: 30px;
         border-color: black;
         font-size: xx-large;
-    }
+    } 
 
     .searchGames {
         display: flex;
         align-items: top;
         justify-content: top;
         margin-top: -40px;
-    }
+    } */
+
+/* Show Body */
+.showBody{
+    background-image: url(../images/background_link.jpeg);
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 /* edit.ejs */
 .editPage {
@@ -120,46 +139,3 @@
     font-family: 'editFont';
 }
 
-/* Played.ejs */
-.playedHeader {
-    font-family: 'playedFont';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 90px;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: black;
-}
-
-.playedBody {
-    background-image: url(../images/background_link.jpeg);
-    background-position: cover;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* unplayed.ejs */
-.unplayedHeader {
-    font-family: 'unplayedFont';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 90px;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: black;
-}
-
-.unplayedBody {
-    background-image: url(../images/hades_background.jpeg);
-    background-position: cover;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}

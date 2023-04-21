@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
-const startGames = require('../db/gamesSeedData')
 const {Game} = require('../models/game')
 
 
@@ -12,51 +11,51 @@ const {Game} = require('../models/game')
 
 //==============ROUTES============================
 
+// New
+router.get('/new', (req, res) => {
+    res.render('games/new.ejs')
+});
+
+router.get('/:id/edit', async (req, res) => {
+    const game = await Game.findById(req.params.id)
+    res.render('games/edit.ejs', {game})
+});
 
 // Index
 router.get('/', async (req, res) => {
     const games = await Game.find({})
     res.render('games/index.ejs', {games})
-})
-
-//Seed
-router.get('/seed', async (req, res) => {
-	await Game.deleteMany({});
-	await Game.create(startGames);
-	res.redirect('/games');
 });
+
+// //Seed
+// router.get('/seed', async (req, res) => {
+// 	await Game.deleteMany({});
+// 	await Game.create(startGames);
+// 	res.redirect('/games');
+// });
 
 // show
-router.get('/show', async (req, res) =>{
-    res.render('games/show.ejs')
+router.get('/:id', async (req, res) =>{
+    const game = await Game.findById(req.params.id)
+    res.render('games/show.ejs', {game})
 })
-// app.post('/games/search', (req, res) => {
-//     // res.render('games/index.ejs')
-//     const searchTerm = req.body.searchBar
-//     console.log(`https://api.rawg.io/api/games/?key=${API_KEY}&search=${encodeURIComponent(searchTerm)}`)
-//        fetch(`https://api.rawg.io/api/games/?key=65295476a4e840ff9fa04447f3cd7fd8&search=${encodeURIComponent(searchTerm)}`)
-//        .then((apiResponse) => {
-//         // apiResponse.json()
-//         console.log(apiResponse)
-//     })
-//        .then(result => res.render('games/played.ejs', {result}))
-//     console.log(searchTerm)
-//     })
 
-// app.post("`games/${playedValue}`", (req, res) => {
-//     req.body.playedValue = req.body.playedValue === 'on' ? true : false;
-//     const game = Game.create(req.body)
-//     res.redirect("`games/${playedValue}`")
-// })
+// Delete
+router.delete('/:id', async (req, res) => {
+	const game = await Game.findByIdAndDelete(req.params.id);
+	res.redirect('/games');
+})
 
-// app.get('/games/played', (req, res) => {
-//     res.render('games/played.ejs')
-// });  
-
-
-router.get('/new', (req, res) => {
-    res.render('games/new.ejs')
+// Update/edit
+router.put('/:id', async (req, res) => {
+	const id = req.params.id;
+	req.body.played = req.body.played === 'on' ? true : false;
+	const game = await Game.findByIdAndUpdate(id, req.body, {
+		new: true,
+	});
+	res.redirect(`/games/${req.params.id}`);
 });
+
 
 router.post('/', (req, res) => {
     console.log(req.body)
@@ -67,9 +66,6 @@ router.post('/', (req, res) => {
     })
 });
 
-router.get('/edit', (req, res) => {
-    res.render('games/edit.ejs')
-    res.redirect('/games/')
-});
+
 
 module.exports = router;

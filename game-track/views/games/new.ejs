@@ -18,18 +18,23 @@
                 <label for="title">Title: </label>
                 <input id="title" type="text" name="title" placeholder="TITLE HERE" required />
                 <!-- <input name="imgUrl" id="imageUrl"/> -->
-                <label for="rating">Rating: </label>
-                <input id="rating" type="text" name="rating" placeholder="rating HERE" required />
+                <select id="rating" name="rating">
+                  <% for(let i = 1; i < 11; i++) { %>
+                   <option><%=i%></option>
+                   <% } %>
+                    </select>
+                <!-- <label for="rating">Rating: </label>
+                <input id="rating" type="text" name="rating" placeholder="rating HERE" required /> -->
                 <label for="searchbar">Search For Game</label>
                 <input name="searchbar" id="searchbar" placeholder="type here" />
                 <button onclick="submitSearch(event)" type="button">Search</button>
 
                 <div id="gameImage"></div>
                 <label>
-                  Played?: <input type="checkbox" name="played" value="played">
+                  Played?: <input type="checkbox" name="played" value="played"/>
                 </label>
               </br>
-                
+                <input type="hidden" id="image" name="image" class="picture"/>
               </fieldset>
               <input type="submit" value="Create New Entry" />
               <!-- <input type="submit" value="Create New Entry" /> -->
@@ -41,6 +46,7 @@
             <ul id="searchResultsList">
               
             </ul>
+            <a href = "../games/edit"><button class = 'editButton'>Edit Entry</button></a>
             <a href = "../games/"><button class = 'buttonBack'>Back</button></a>
           </div>
         </main>
@@ -111,23 +117,17 @@
               `;
               listContainer.append(gameItem)
 
+              console.log(imgContainer.style.backgroundImage)
+              let pic = document.querySelector('.picture');
+              let img = imgContainer.style.backgroundImage
+              pic.setAttribute('value', game.background_image)
+
             });// <--end of foreach
 
           
 
           }
-          // const form = document.querySelector('form');
-          //   form.addEventListener('submit', (event) => {
-          //     event.preventDefault();
-          //     const playedCheckbox = document.querySelector('input[name="played"]');
-          //     const playedValue = playedCheckbox.checked ? 'played' : 'unplayed';
-          //     console.log(playedValue)
-          //     // const url = `/games/${playedValue}`; // modify the URL based on the checkbox value
-          //     // form.redirect = url; // update the form action to redirect to the correct page
-          //     // form.submit(); // submit the form
-          //   });
-
-         
+        
         </script>
 
 </body>

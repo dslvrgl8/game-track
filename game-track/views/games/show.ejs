@@ -9,24 +9,20 @@
 
     <title>Game Entry</title>
 </head>
-<body>
+<body class="showBody">
      <fieldset>
-                <legend class = 'newHeader'>New Game Entry</legend>
-                <label for="title">Title: </label>
-                <input id="title" type="text" name="title" placeholder="TITLE HERE" required />
+                <legend class = 'newHeader'>Game Entry</legend>
+                <h2>Title: <%= game.title %></h2>
                 <!-- <input name="imgUrl" id="imageUrl"/> -->
-                <label for="rating">Rating: </label>
-                <input id="rating" type="text" name="rating" placeholder="rating HERE" required />
-                <!-- <label for="searchbar">Search For Game</label>
-                <input name="searchbar" id="searchbar" placeholder="type here" />
-                <button onclick="submitSearch(event)" type="button">Search</button> -->
-
-                <div id="gameImage"></div>
-                <label>
-                  Played?: <input type="checkbox" name="played" value="played">
-                </label>
+                <h2>Rating: <%= game.rating %></h2>
+                <img src="<%= game.image %>"/>
+                <h3>
+                  Played?: <%= game.played %>
+                </h3>
               </br>
-              <a href = "../games/edit"><button class = 'editButton'>Edit Entry</button></a>
+              <a href = "../games/<%= game._id %>/edit"><button class = 'editButton'>Edit Entry</button></a>
+              <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete"/>
               </fieldset>
 </body>
 </html>
