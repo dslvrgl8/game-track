@@ -2,7 +2,7 @@
 
 My project is going to be a video game tracker/logger called **Game Track**. I will have a database that users can input the games they are playing or have played, as well as rating them and giving them a score. It will also pull from an API that has the info for the games, including rating and picture as well as type of game.
 
-## Link : 
+## Link : https://gametrack.onrender.com/games
 
 
 ### **Technology Used**
